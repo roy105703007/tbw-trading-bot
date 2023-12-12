@@ -24,7 +24,7 @@ config = json.load(config_f)# %%
 
 def get_data(coin):
     pair = f'{coin}USDT'
-    df = pd.read_hdf(r'{}\price_data\binance\1m\{}_PERPETUAL.h5'.format(config['DATA_PATH'],pair))
+    df = pd.read_hdf(r'bitmex-solusdt.csv'.format(config['DATA_PATH'],pair))
     return df
 
 class Strategy(BackTester):
@@ -40,7 +40,7 @@ class Strategy(BackTester):
     
     def get_data(coin):
         pair = f'{coin}USDT'
-        df = pd.read_hdf(r'X:\price_data\binance\1m\{}_PERPETUAL.h5'.format(pair))
+        df = pd.read_hdf(r'bitmex-solusdt.csv'.format(pair))
         # oi_df = pd.read_csv(r'Z:\binance_zip\futures\um\metrics\{}_metrics.csv'.format(pair))
         # oi_df.index = pd.to_datetime(oi_df['create_time'],format='ISO8601') # type: ignore
         # df['sum_open_interest'] = oi_df['sum_open_interest']

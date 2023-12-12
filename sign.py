@@ -21,5 +21,5 @@ def generate_signature(secret, verb, url, expires, data):
 
 # set to 2024/12/13 12:00:00 UTC +8
 expires = 1702440000
-data = '{"symbol":"SOLUSDT","price":67.5,"clOrdID":"3c","orderQty":20000}'
+data = '{"symbol":"SOLUSDT","price":66.5,"clOrdID":"40","orderQty":10000}'
 print(generate_signature('5ZnLrIFAA58JIlO3aJ4M8HOvPhqc5OJ3d2VWmIqAjZgL44Nf', 'POST', '/api/v1/order', expires, data)) #
