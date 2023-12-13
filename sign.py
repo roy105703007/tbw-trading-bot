@@ -17,9 +17,11 @@ def generate_signature(secret, verb, url, expires, data):
     print("Computing HMAC: %s" % message)
 
     signature = hmac.new(bytes(secret, 'utf-8'), message, digestmod=hashlib.sha256).hexdigest()
+    print("Signature: %s" % signature)
     return signature
 
 # set to 2024/12/13 12:00:00 UTC +8
 expires = 1702440000
-data = '{"symbol":"SOLUSDT","price":66.5,"clOrdID":"40","orderQty":10000}'
-print(generate_signature('5ZnLrIFAA58JIlO3aJ4M8HOvPhqc5OJ3d2VWmIqAjZgL44Nf', 'POST', '/api/v1/order', expires, data)) #
+data = '{"symbol":"SOLUSDT","price":67.3,"clOrdID":"102","orderQty":100000}'
+# data = '{"symbol":"SOLUSDT","side":"Sell","orderQty":1000,"ordType":"Market"}'
+print(generate_signature('', 'POST', '/api/v1/order', expires, data)) 
